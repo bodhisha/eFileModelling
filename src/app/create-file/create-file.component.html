@@ -1,0 +1,78 @@
+<app-header></app-header>
+<div class="row rowMain">
+<div class="col-md-2">
+    <app-side-nav></app-side-nav>
+</div>
+<div class="col-md-10">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 grid-item2"> 
+            <form #createFile="ngForm" (ngSubmit)="onSubmit(createFile)">
+              <h1 class="login_head" >Create File</h1>
+                  <div class="form-group">
+                   <label for="filenumber">File Number*</label>
+                   <input type="text" id="filenumber"  class="form-control" required minlength="4"
+                   [(ngModel)]="filedetails.filenumber" name="filenumber" #name="ngModel" >
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert-danger">
+  <small><div *ngIf="name.errors.required">
+    <small>FileNumber is required.</small>
+  </div></small>
+  <small><div *ngIf="name.errors.minlength">
+    <small>Number must be at least 4 characters long.</small>
+  </div></small>
+
+</div>
+</div>
+        <div class="form-group">
+            <label for="filename">File Name*</label>
+            <input type="text" id="filename" class="form-control" required minlength="5"
+            [(ngModel)]="filedetails.filename" name="filename" #filename="ngModel">
+
+            <div *ngIf="filename.invalid && (filename.dirty || filename.touched)"
+            class="alert-danger">
+            <small><div *ngIf="filename.errors.required">
+            <small>Filename is required.</small>
+             </div></small>
+            <small><div *ngIf="filename.errors.minlength">
+             <small>Filename must be at least 5 characters long.</small>
+            </div></small>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="filetitle">File Title*</label>
+            <input type="text" id="filetitle" class="form-control" required
+            [(ngModel)]="filedetails.filetitle" name="filetitle" #filetitle="ngModel">
+                <div *ngIf="filetitle.invalid && (filetitle.dirty || filetitle.touched)"
+                class="alert-danger">
+                <small><div *ngIf="filetitle.errors.required">
+                <small>File title is required.</small>
+                 </div></small>
+                </div>
+        </div>
+
+
+        <div class="form-group">
+           <label for="description">Description</label>
+          <textarea class="form-control" id="description" name="description" cols="3" rows="4" 
+          required 
+            [(ngModel)]="filedetails.description" name="description" #description="ngModel">
+
+
+          </textarea>
+        </div>       
+            </form>
+        <button type="button" class="btn btn-secondary" id="submitButton">
+        Create File
+        </button>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>

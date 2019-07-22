@@ -1,0 +1,15 @@
+.ct{
+        
+    top: 15vh;
+    background-color:#FFEBEE;
+    border: 1px solid black;
+    padding: 50px;
+   
+}
+
+.login_head{
+    text-align: center;
+}
+#submitButton{
+    float:right;
+}
